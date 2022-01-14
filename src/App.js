@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import Main from './Components/Main';
 import './App.css';
+import List from './Components/List';
+import React, {Component} from 'react';
 
-function App() {
+class App extends Component {
+  constructor(){
+    super()
+    this.state = {
+      groceries: [],
+    }
+  }
+  getList=(list) => {
+    this.setState({groceries:[...this.state.groceries, list]})
+  }
+  render(){
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>Grocery List:</h2>
+      <Main  getList={this.getList}/>
+      <h2>Current Items:</h2>
+      <ul>
+        <li className="list-line">Item: Steak, Units: 1lb, Quantity: 1</li>
+        <li className="list-line">Item: Onion, Units: 0.51lbs, Quantity: 2</li>
+        <li className="list-line">Item: Cheese, Units: 16oz, Quantity: 3</li>
+      
+      <List getItems={this.state.groceries}/>
+      </ul>
     </div>
   );
+}
 }
 
 export default App;
