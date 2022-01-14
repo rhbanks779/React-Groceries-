@@ -43,8 +43,11 @@ class Main extends Component{
                     <label><strong>Quantity: </strong></label>
                     <input id='quantity' type='text' value={this.state.quantity} onChange={this.saveInfo} />
                     <br></br>
+                    <label><strong>Enter True if Purchased:</strong></label>
+                    <input id='isPurchased' type='text' value={this.state.isPurchased} onChange={this.saveInfo}></input>
+                    <br></br>
                     <button><strong>Add Item</strong></button>
-                                      
+                                     
                                           
                 </div>
             </form>
