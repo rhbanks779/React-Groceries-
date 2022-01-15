@@ -10,7 +10,7 @@ class List extends Component{
                 <ul>
                     {this.props.getItems.map((item, index) => {
                     return <div key={index}> <ul>
-                        {item.isPurchased === 'true' && <h3>Item Purchased</h3>}
+                        {item.isPurchased === 'true' && <h3 className='list-line'><bold>Item Purchased</bold></h3>}
                         <li className="list-line"><bold>Item:</bold> {item.item}, <bold>Units: </bold>{item.units}, <bold>Quantity: </bold>{item.quantity} </li>
                         </ul>
                         </div>
