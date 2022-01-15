@@ -10,7 +10,7 @@ class List extends Component{
                 <ul>
                     {this.props.getItems.map((item, index) => {
                     return <div key={index}> <ul>
-                        {item.isPurchased && <h3>Item Purchased</h3>}
+                        {item.isPurchased === 'true' && <h3>Item Purchased</h3>}
                         <li className="list-line"><bold>Item:</bold> {item.item}, <bold>Units: </bold>{item.units}, <bold>Quantity: </bold>{item.quantity} </li>
                         </ul>
                         </div>
@@ -37,11 +37,6 @@ export default List
 //     )}
 
 
-//another method for rendering ifpurchased is true
-// {this.props.getItems.map((item, index) => {
-//     return <div key={index}> <ul>
-//         <h2 style={{display: item.isPurchased ? 'block': 'none'}}></h2>
-//       <li className="list-line"><bold>Item:</bold> {item.item}, <bold>Units: </bold>{item.units}, <bold>Quantity: </bold>{item.quantity} </li>
-//         </ul>
+
  
 
